@@ -1,15 +1,11 @@
-import java.util.Scanner;
-
 class Homework {
     public static void main(String[] args) {
-        printYear();
-        localDate();
-        task3();
+        printYear(2000);
+        localDate(0, 2015);
+        countDeliveryDay(60);
     }
 
-    public static void printYear() {
-        Scanner sc = new Scanner(System.in);
-        int year = sc.nextInt();
+    public static void printYear(int year) {
         if ((year % 4 == 0 || year % 100 != 0) && year % 400 == 0) {
             System.out.println(year + " год является високосным");
         } else {
@@ -18,10 +14,7 @@ class Homework {
 
     }
 
-    public static void localDate(){
-        Scanner sc = new Scanner(System.in);
-        int clientIos = sc.nextInt();
-        int clientDeviceYear = sc.nextInt();
+    public static void localDate(int clientIos, int clientDeviceYear){
         if (clientIos == 0) {
             if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
@@ -37,9 +30,7 @@ class Homework {
         }
     }
 
-    public static void task3() {
-        Scanner sc = new Scanner(System.in);
-        int deliveryDistance = sc.nextInt();
+    public static void countDeliveryDay(int deliveryDistance) {
         int dayOfDelivery = 1;
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: " + dayOfDelivery);
